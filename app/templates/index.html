@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Hero Section -->
+<section id="hero" class="container text-center py-5">
+    <div class="row align-items-center">
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="{{ url_for('static', filename='/images/profile.jpeg') }}" alt="profile photo" class="img-fluid rounded-circle shadow" style="max-width: 220px;">
+        </div>
+    <div class="col-md-8 text-center text-md-start">
+    <h1 class="display-4 fw-bold">Python Developer & </h1>
+        <h1 class="display-4 fw-bold"> Software Engineer </h1>
+    <h3 class="mt-3">Z 3+ lat doświadczenia w IT (QA/Dev).</h3>
+
+    <p class="lead mt-4">
+        Jestem inżynierem oprogrogramowania z 3+ letnim doświadczeniem komercyjnym (w tym 6 miesięcy w Scali) i backgroundem w automatyzacji testów.
+        Moje 4-letnie studia doktoranckie z fizyki doświadczalnej nauczyły mnie analitycznego podejścia do rozwiązywania złożonych problemów.
+        Stawiam na budowanie czystego, modułowego i przetestowanego kodu.
+    </p>
+    </div>
+    </div>
+</section>
+
+<hr class="container">
+
+<!-- Projekty Section -->
+<section id="projekty" class="container py-5">
+    <h2 class="text-center mb-4 fw-bold">Wybrane Projekty</h2>
+
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.name }}</h5>
+                    <p class="card-text">{{ project.description }}</p>
+                    <a href="{{ project.link }}" target="_blank" class="btn btn-primary">Zobacz</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<hr class="container">
+
+<!-- O mnie Section -->
+<section id="o-mnie" class="container py-5">
+    <h2 class="text-center mb-4 fw-bold">Moje Atuty</h2>
+    <div class="row text-center">
+
+        <div class="col-md-4 mb-4">
+            <h4>🛠️ Warsztat Inżynierski (QA/Dev)</h4>
+            <p>
+                Posiadam 3+ lata komercyjnego doświadczenia w IT, w tym 6 miesięcy jako programista Scala. Moja obecna rola w automatyzacji testów
+                nauczyła mnie, że kod, który nie jest przetestowany jest zapsuty. Piszę kod myśląc o jakości (TDD/BBD) od samego początku
+            </p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <h4>🧠 Analityczne Myślenie (Fizyka)</h4>
+            <p>
+                Moje 4 lata na doktoracie z fizyki doświadczalnej były doskonałym treningiem w rozwiązywaniu złożonych problemów. Nauczyłem się
+                dopasowywać modele i iteracyjnie poprawiać proces w oparciu o dane. Przekładam to myślenie na budowanie logicznych, wydajnych i
+                solidnych systemów backendowych.
+            </p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <h4>📊 Pragmatyzm i Produktywnośc</h4>
+            <p>
+                Rozumiem cykl życia oprogramowania (SDLC), pracę w Jira i presję deadline'ów. Używam nowoczesnych narzędzi (jak AI), aby pisać kod szybciej
+                i skupiać się na projektowaniu architektury oraz rozwiązywaniu problemów biznesowych, a nie na powtarzalnych zadaniach.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<hr class="container">
+
+<!-- Narzędzia Section -->
+<section id="narzedzia" class="container py-5">
+    <h2 class="text-center mb-4 fw-bold">Mój Zestaw Narzędzi (Tech Stack)</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Backend & Bazy Danych</h5>
+            <p>Pythom FastAPI, Flask, Django, SQL, PostreSQL, SQLite, SQLAlchemy, REST API</p>
+
+            <h5>Testowanie & DevOps</h5>
+            <p>Pytest, Git, CI/CD, Docker</p>
+        </div>
+        <div class="col-md-6">
+            <h5>Data Science</h5>
+            <p>Pandas, NumPy, Scikit-learn, SpaCy, Jupiter</p>
+
+            <h5>Frontend & Wizualizacja</h5>
+            <p>Streamlit, HTML5, CSS3, Bootstrap</p>
+        </div>
+    </div>
+</section>
+
+<hr class="container">
+
+<!-- Kontakt Section -->
+<section id="kontakt" class="container text-center py-5">
+    <h2 class="mb-4 fw-bold">Porozmawiajmy</h2>
+    <p class="lead">
+        Szukam roli Python Developera (Backend/Full-Stack), w której mogę budować solidne, skalowalne apliakcje i wnosić swoje unikalne doświadczenie
+        w QA i analitycznym myśleniu. Jeśli szukasz inżyniera który dba o jakość kodu, chętnie pomogę.
+    </p>
+    <p class="mt-3">Napisz do mnie: <strong>maciej.gala@gmail.com</strong></p>
+    <a href="https://www.linkedin.com/in/maciej-gala-296863217/" class="btn btn-info btn-lg mt-2">LinkedIn</a>
+    <a href="https://github.com/NinerMG" class="btn btn-info btn-lg mt-2">GitHub</a>
+</section>
+
+{% endblock %}
