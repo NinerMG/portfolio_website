@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "id": "morse-code-converter",
+      "name": {
+        "pl": "Morse Code Converter (Architektura & QA)",
+        "en": "Morse Code Converter (Architecture & QA)"
+      },
+      "description": {
+        "pl": "Wielomodułowa aplikacja (architektura MVC) z pełnym pokryciem testowym (Pytest). Udowadnia moją dbałość o jakość kodu, obsługę przypadków brzegowych i umiejętności inżynierskie (np. generowanie audio w NumPy).",
+        "en": "Multi-module application (MVC architecture) with full test coverage (Pytest). Demonstrates my attention to code quality, edge case handling, and engineering skills (e.g., audio generation in NumPy)."
+      },
+      "link": "https://github.com/NinerMG/MorseCodeConverter",
+      "tags": ["OOP", "Tkinter", "Pytest", "NumPy", "QA"],
+      "img_url": "images/projects/morse_code_generator.png",
+      "order": 1,
+      "featured": true
+    }
+  ]
+}

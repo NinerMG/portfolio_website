@@ -1,28 +1,34 @@
 from flask import Flask, render_template, redirect
+import json
+import os
 
 app = Flask(__name__)
 
-# Projekty w języku polskim
-MY_PROJECTS_PL = [
-    {
-        "name": "Morse Code Converter (Architektura & QA)",
-        "description": "Wielomodułowa aplikacja (architektura MVC) z pełnym pokryciem testowym (Pytest). Udowadnia moją dbałość o jakość kodu, obsługę przypadków brzegowych i umiejętności inżynierskie (np. generowanie audio w NumPy).",
-        "link": "https://github.com/NinerMG/MorseCodeConverter",
-        "tags": ["OOP", "Tkinter", "Pytest", "NumPy", "QA"],
-        "img_url": "images/projects/morse_code_generator.png"
-    }
-]
 
-# Projekty w języku angielskim
-MY_PROJECTS_EN = [
-    {
-        "name": "Morse Code Converter (Architecture & QA)",
-        "description": "Multi-module application (MVC architecture) with full test coverage (Pytest). Demonstrates my attention to code quality, edge case handling, and engineering skills (e.g., audio generation in NumPy).",
-        "link": "https://github.com/NinerMG/MorseCodeConverter",
-        "tags": ["OOP", "Tkinter", "Pytest", "NumPy", "QA"],
-        "img_url": "images/projects/morse_code_generator.png"
-    }
-]
+def load_projects():
+    """Wczytuje projekty z pliku JSON"""
+    json_path = os.path.join(os.path.dirname(__file__), 'data', 'projects.json')
+    with open(json_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return data['projects']
+
+
+def get_projects_by_language(lang='pl'):
+    """Zwraca projekty w wybranym języku"""
+    projects = load_projects()
+    localized_projects = []
+    
+    for project in projects:
+        localized_project = {
+            'name': project['name'][lang],
+            'description': project['description'][lang],
+            'link': project['link'],
+            'tags': project['tags'],
+            'img_url': project['img_url']
+        }
+        localized_projects.append(localized_project)
+    
+    return localized_projects
 
 
 @app.route('/')
@@ -34,13 +40,15 @@ def home():
 @app.route('/pl')
 def home_pl():
     """Polish version"""
-    return render_template('index_pl.html', projects=MY_PROJECTS_PL, lang='pl')
+    projects = get_projects_by_language('pl')
+    return render_template('index_pl.html', projects=projects, lang='pl')
 
 
 @app.route('/en')
 def home_en():
     """English version"""
-    return render_template('index_en.html', projects=MY_PROJECTS_EN, lang='en')
+    projects = get_projects_by_language('en')
+    return render_template('index_en.html', projects=projects, lang='en')
 
 
 if __name__ == '__main__':
