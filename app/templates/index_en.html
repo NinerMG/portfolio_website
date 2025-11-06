@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Hero Section -->
+<section id="hero" class="hero-section fade-in">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-content">
+                <div class="badge-pill mb-3">
+                    <i class="fas fa-code"></i> Python Developer
+                </div>
+                <h1 class="hero-title mb-4">
+                    Python Developer & <br>
+                    <span class="gradient-text">Software Engineer</span>
+                </h1>
+                <h3 class="hero-subtitle mb-4">With 3+ years of IT experience (QA/Dev)</h3>
+                <p class="hero-description">
+                    I am a software engineer with 3+ years of commercial experience (including 6 months in Scala) and a background in test automation.
+                    My 4-year PhD studies in experimental physics taught me an analytical approach to solving complex problems.
+                    I focus on building clean, modular, and well-tested code.
+                </p>
+                <div class="hero-buttons mt-4">
+                    <a href="#contact" class="btn btn-primary-gradient">
+                        <i class="fas fa-envelope me-2"></i>Get in touch
+                    </a>
+                    <a href="#projects" class="btn btn-outline-custom">
+                        <i class="fas fa-folder-open me-2"></i>View projects
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="profile-image-wrapper">
+                    <div class="profile-bg-gradient"></div>
+                    <img src="{{ url_for('static', filename='images/profile.jpeg') }}" 
+                         alt="Maciej Gala - Python Developer" 
+                         class="profile-image">
+                    <div class="floating-badge badge-1">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="floating-badge badge-3">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wave-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section fade-in">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-badge">Portfolio</span>
+            <h2 class="section-title">Selected Projects</h2>
+            <p class="section-subtitle">Projects showcasing my skills and approach to code quality</p>
+        </div>
+
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-lg-6">
+                <div class="project-card">
+                    {% if project.img_url %}
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename=project.img_url) }}" alt="{{ project.name }}">
+                    </div>
+                    {% endif %}
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="project-tags">
+                            {% for tag in project.tags %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <h3 class="project-title">{{ project.name }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-footer">
+                        <a href="{{ project.link }}" target="_blank" class="project-link">
+                            View project
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                        <a href="{{ project.link }}" target="_blank" class="icon-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section fade-in">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-badge">Competencies</span>
+            <h2 class="section-title">My Strengths</h2>
+            <p class="section-subtitle">What sets my approach to programming apart</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                    </div>
+                    <h4 class="feature-title">Engineering Craft (QA/Dev)</h4>
+                    <p class="feature-description">
+                        I have 3+ years of commercial IT experience, including 6 months as a Scala developer. My current role in test automation
+                        taught me that untested code is broken code. I write code with quality in mind (TDD/BDD) from the very beginning.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <h4 class="feature-title">Analytical Thinking (Physics)</h4>
+                    <p class="feature-description">
+                        My 4 years in a PhD program in experimental physics were excellent training in solving complex problems. I learned to
+                        fit models and iteratively improve processes based on data. I apply this thinking to building logical, efficient, and
+                        robust backend systems.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <h4 class="feature-title">Pragmatism & Productivity</h4>
+                    <p class="feature-description">
+                        I understand the software development lifecycle (SDLC), working in Jira, and deadline pressure. I use modern tools (like AI) to write code faster
+                        and focus on architecture design and solving business problems, not on repetitive tasks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section id="tech-stack" class="tech-stack-section fade-in">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-badge">Technologies</span>
+            <h2 class="section-title">My Tech Stack</h2>
+            <p class="section-subtitle">Technologies I use on a daily basis</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="tech-category-card">
+                    <div class="tech-header">
+                        <i class="fas fa-server"></i>
+                        <h5>Backend & Databases</h5>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">SQLite</span>
+                        <span class="tech-tag">SQLAlchemy</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+                </div>
+
+                <div class="tech-category-card">
+                    <div class="tech-header">
+                        <i class="fas fa-vial"></i>
+                        <h5>Testing & DevOps</h5>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Pytest</span>
+                        <span class="tech-tag">Selenium</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">CI/CD</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="tech-category-card">
+                    <div class="tech-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h5>Data Science</h5>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">SpaCy</span>
+                        <span class="tech-tag">Jupyter</span>
+                    </div>
+                </div>
+
+                <div class="tech-category-card">
+                    <div class="tech-header">
+                        <i class="fas fa-palette"></i>
+                        <h5>Frontend & Visualization</h5>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section fade-in">
+    <div class="container">
+        <div class="contact-card">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="section-badge mb-3">Collaboration</span>
+                    <h2 class="section-title mb-4">Let's Talk</h2>
+                    <p class="contact-text">
+                        I'm looking for a Python Developer role (Backend/Full-Stack) where I can build solid, scalable applications and bring my unique experience
+                        in QA and analytical thinking. If you're looking for an engineer who cares about code quality, I'd be happy to help.
+                    </p>
+                    <div class="contact-info mt-4">
+                        <a href="mailto:maciej.gala@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            maciej.gala@gmail.com
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="contact-buttons">
+                        <a href="https://www.linkedin.com/in/maciej-gala-296863217/" target="_blank" class="btn btn-primary-gradient btn-lg">
+                            <i class="fab fa-linkedin me-2"></i>LinkedIn
+                        </a>
+                        <a href="https://github.com/NinerMG" target="_blank" class="btn btn-outline-custom btn-lg">
+                            <i class="fab fa-github me-2"></i>GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
