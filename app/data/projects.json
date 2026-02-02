@@ -15,6 +15,103 @@
       "img_url": "images/projects/morse_code_generator.png",
       "order": 1,
       "featured": true
-    }
+    },
+    {
+       "id": "spotify-billboard-playlist-creator",
+    "name": {
+    "pl": "Spotify Billboard Playlist Creator",
+    "en": "Spotify Billboard Playlist Creator"
+  },
+  "description": {
+    "pl": "Aplikacja webowa Flask integrująca web scraping (BeautifulSoup) z Spotify API (OAuth 2.0). Automatycznie tworzy playlisty na podstawie list Billboard Hot 100 z dowolnej daty. Projekt z pełnym pokryciem testowym (60+ testów Pytest) i przemyślaną architekturą MVC.",
+    "en": "Flask web application integrating web scraping (BeautifulSoup) with Spotify API (OAuth 2.0). Automatically creates playlists based on Billboard Hot 100 charts from any date. Project with full test coverage (60+ Pytest tests) and well-designed MVC architecture."
+  },
+  "link": "https://github.com/NinerMG/Playlist_Scraper_Spotify",
+  "tags": ["Flask", "Web Scraping", "Spotify API", "OAuth 2.0", "Pytest", "BeautifulSoup"],
+  "img_url": "images/projects/spotify_playlist_creator.png",
+  "order": 2,
+  "featured": true
+    },
+    {
+  "id": "brew-and-byte",
+  "name": {
+    "pl": "Brew & Byte",
+    "en": "Brew & Byte"
+  },
+  "description": {
+    "pl": "Aplikacja webowa Flask do znajdowania kawiarni przyjaznych pracy zdalnej. System uwierzytelniania (Flask-Login), wielojęzyczność (Flask-Babel: PL/EN), pełna walidacja (WTForms + custom validators), zabezpieczenia (hashowanie haseł). Projekt z pokryciem testowym (Pytest: unit, integration, security, i18n).",
+    "en": "Flask web application for finding remote-work-friendly cafés. Authentication system (Flask-Login), multilingual support (Flask-Babel: PL/EN), full validation (WTForms + custom validators), security (password hashing). Project with test coverage (Pytest: unit, integration, security, i18n)."
+  },
+  "link": "https://github.com/NinerMG/Brew_and_Byte",
+  "tags": ["Flask", "SQLAlchemy", "Flask-Login", "i18n", "Pytest", "WTForms", "Security"],
+  "img_url": "images/projects/brew_and_byte.png",
+  "order": 3,
+  "featured": true
+},
+    {
+  "id": "tic-tac-toe-multiplatform",
+  "name": {
+    "pl": "Tic Tac Toe (Architektura & AI)",
+    "en": "Tic Tac Toe (Architecture & AI)"
+  },
+  "description": {
+    "pl": "Wieloplatformowa gra w kółko i krzyżyk z trzema interfejsami (CLI, GUI Tkinter, Flask Web). Implementacja algorytmu Minimax dla niepokonanego AI, wzorce projektowe (Strategy Pattern), pełne testy jednostkowe (25+ testów Pytest) oraz architektura MVC. Projekt demonstruje zasady SOLID, type hints i dokumentację zgodną z PEP 8.",
+    "en": "Multi-platform Tic Tac Toe game with three interfaces (CLI, GUI Tkinter, Flask Web). Minimax algorithm implementation for unbeatable AI, design patterns (Strategy Pattern), full unit test coverage (25+ Pytest tests), and MVC architecture. Project demonstrates SOLID principles, type hints, and PEP 8 compliant documentation."
+  },
+  "link": "https://github.com/NinerMG/TicTacToe",
+  "tags": ["OOP", "Flask", "Tkinter", "Minimax", "Strategy Pattern", "Pytest", "AJAX", "SOLID"],
+  "img_url": "images/projects/tic_tac_toe.png",
+  "order": 4,
+  "featured": true
+},
+    {
+  "id": "breakout-game-pygame",
+  "name": {
+    "pl": "Breakout Game (Architektura OOP & Testy)",
+    "en": "Breakout Game (OOP Architecture & Tests)"
+  },
+  "description": {
+    "pl": "Klasyczna gra Breakout z czystą architekturą obiektową i pełnym zestawem testów jednostkowych (Pytest). Projekt z trzema poziomami trudności, systemem highscore, progresją poziomów i fizyką kolizji. Demonstruje wzorce projektowe (Sprite Pattern), type hints, obsługę zdarzeń pygame, oraz dbałość o walidację i przypadki brzegowe.",
+    "en": "Classic Breakout game with clean object-oriented architecture and full unit test suite (Pytest). Project features three difficulty levels, highscore system, level progression, and collision physics. Demonstrates design patterns (Sprite Pattern), type hints, pygame event handling, and attention to validation and edge cases."
+  },
+  "link": "https://github.com/NinerMG/breakout_game",
+  "tags": ["OOP", "Pygame", "Pytest", "Game Dev", "Physics", "MVC"],
+  "img_url": "images/projects/breakout_game.png",
+  "order": 5,
+  "featured": true
+},
+    {
+  "id": "image-watermarking-tool",
+  "name": {
+    "pl": "Image Watermarking Tool (GUI & Przetwarzanie Obrazów)",
+    "en": "Image Watermarking Tool (GUI & Image Processing)"
+  },
+  "description": {
+    "pl": "Aplikacja desktopowa Tkinter do dodawania watermarków na obrazy z trybem wsadowym. Implementuje algorytm nakładania diagonalnego wzoru z cieniowaniem, podgląd na żywo i przetwarzanie całych folderów. Projekt z architekturą MVC, testami jednostkowymi (Pytest) i wykorzystaniem Pillow do manipulacji obrazami.",
+    "en": "Tkinter desktop application for adding watermarks to images with batch processing mode. Implements diagonal pattern overlay algorithm with shadowing, live preview, and full folder processing. Project with MVC architecture, unit tests (Pytest), and Pillow for image manipulation."
+  },
+  "link": "https://github.com/NinerMG/ImageWatermarking",
+  "tags": ["Tkinter", "Pillow", "Image Processing", "Pytest", "GUI", "Batch Processing"],
+  "img_url": "images/projects/image_watermarking.png",
+  "order": 6,
+  "featured": true
+},
+    {
+  "id": "typing-speed-app",
+  "name": {
+    "pl": "Typing Speed App (GUI & Metryki Czasu Rzeczywistego)",
+    "en": "Typing Speed App (GUI & Real-Time Metrics)"
+  },
+  "description": {
+    "pl": "Aplikacja desktopowa Tkinter do testowania szybkości pisania z trybem hardcore (blokada Backspace). System obliczania WPM i dokładności w czasie rzeczywistym, kolorowe podświetlanie błędów, zarządzanie rekordami. Projekt z czystą architekturą MVC, pełnymi testami jednostkowymi (unittest) i type hints zgodnie z PEP 484.",
+    "en": "Tkinter desktop application for testing typing speed with hardcore mode (Backspace lock). Real-time WPM and accuracy calculation system, color-coded error highlighting, highscore management. Project with clean MVC architecture, full unit test coverage (unittest), and type hints following PEP 484."
+  },
+  "link": "https://github.com/NinerMG/TypingSpeedApp",
+  "tags": ["Tkinter", "OOP", "MVC", "unittest", "Real-Time", "GUI"],
+  "img_url": "images/projects/typing_speed_app.png",
+  "order": 7,
+  "featured": true
+}
+
   ]
 }
